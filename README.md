@@ -17,6 +17,10 @@ pip install dnest4-bilby
 
 **Note:** the `conda` version of the `dnest4` does not support `numpy>2.0`.
 
+**Note:** due to changes in `numpy` and Python that are incompatible with `dnest4` this plugin is only tested with Python < 3.11.
+It may be possible to compile a working version of `dynest4` with more recent `numpy` and Python versions but this has not been
+tested.
+
 ## Usage
 
 Once `dnest4-bilby` is installed, the sampler can be used directly in bilby via the run_sampler function:
