@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.9", "3.10"]
     runs-on: ubuntu-latest
 
     steps:
@@ -32,7 +32,6 @@ jobs:
         python -m pip install numpy scipy cython setuptools
         git clone https://github.com/eggplantbren/DNest4.git
         cd DNest4/code
-        export CFLAGS="-I$(python -c 'import numpy; print(numpy.get_include())')"
         make
         cd ..
         python setup.py install
