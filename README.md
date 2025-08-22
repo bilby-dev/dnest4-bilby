@@ -12,7 +12,7 @@ can be installed from source following [these instructions](https://github.com/e
 Once `dnest4` is installed, the plugin can be installed using `pip`:
 
 ```bash
-pip install dnest4-bilby
+pip install git+https://github.com/bilby-dev/dnest4-bilby.git
 ```
 
 **Note:** the `conda` version of the `dnest4` does not support `numpy>2.0`.
