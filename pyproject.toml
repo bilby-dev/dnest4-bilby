@@ -5,10 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "dnest4-bilby"
 authors = [
+    {name = "Bilby Developers"},
+]
+maintainers = [
     {name = "Colm Talbot", email = "colm.talbot@ligo.org"},
     {name = "Michael J. Williams", email = "michael.williams@ligo.org"},
 ]
-description = "Interface and plugin for using dnest4 in bilby"
+description = "Plugin for using dnest4 with bilby."
 readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
