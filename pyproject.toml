@@ -20,7 +20,6 @@ classifiers = [
 ]
 dependencies = [
     "bilby>=2.3.0",
-    "dnest4",
     "numpy",
 ]
 

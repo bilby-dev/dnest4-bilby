@@ -7,3 +7,12 @@ try:
 except PackageNotFoundError:
     # package is not installed
     __version__ = "unknown"
+    
+try:
+    import dnest4
+except ImportError:
+    raise ImportError(
+        "dnest4 is not installed. Please ins tall dnest4 to use the dnest4 "
+        "plugin for bilby. See the README for installation instructions: "
+        "https://github.com/bilby-dev/dnest4-bilby."
+    )
