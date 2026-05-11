@@ -7,9 +7,9 @@ try:
 except PackageNotFoundError:
     # package is not installed
     __version__ = "unknown"
-    
+
 try:
-    import dnest4
+    import dnest4  # noqa: F401
 except ImportError:
     raise ImportError(
         "dnest4 is not installed. Please ins tall dnest4 to use the dnest4 "
