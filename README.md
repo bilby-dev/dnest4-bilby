@@ -6,20 +6,31 @@ This plugin provides the `dnest4` sampler in bilby.
 
 ## Installation
 
+This plugin is available via `pip`:
+
+```
+pip install dnest4-bilby
+```
+
+and `conda`:
+
+```
+conda install conda-forge:dnest4-bilby
+```
+
+**Note:** when installing via `pip`, you must install `dnest4` separately.
+
+### Installing `dnest4`
+
 `dnest4` is available [via conda](https://anaconda.org/conda-forge/dnest4), or
 can be installed from source following [these instructions](https://github.com/eggplantbren/DNest4?tab=readme-ov-file#compiling).
 
-Once `dnest4` is installed, the plugin can be installed using `pip`:
+### Caveats
 
-```bash
-pip install git+https://github.com/bilby-dev/dnest4-bilby.git
-```
-
-**Note:** the `conda` version of the `dnest4` does not support `numpy>2.0`.
-
-**Note:** due to changes in `numpy` and Python that are incompatible with `dnest4` this plugin is only tested with Python < 3.11.
-It may be possible to compile a working version of `dynest4` with more recent `numpy` and Python versions but this has not been
-tested.
+* `dnest4` no longer provides a Python interface
+* The `conda` version of the `dnest4` does not support `numpy>2.0`.
+* Due to changes in `numpy` and Python that are incompatible with `dnest4` this plugin is only tested with Python < 3.11. It may be possible to compile a working version of `dynest4` with more recent `numpy` and Python versions but this has not  been tested.
+* This plugin is tested against `dnest4` versions 0.2.4 and 0.3.3, the latest versions available via conda-forge and PyPI respectively.
 
 ## Usage
 

@@ -17,8 +17,30 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10"]
-        dnest4-version: ["0.2.4", "v0.3.3"]
+        include:
+          - python-version: "3.9"
+            dnest4-version: "0.2.4"
+            numpy-spec: "numpy<2"
+            scipy-spec: "scipy<1.14"
+            cython-spec: "cython<3"
+
+          - python-version: "3.10"
+            dnest4-version: "0.2.4"
+            numpy-spec: "numpy<2"
+            scipy-spec: "scipy<1.14"
+            cython-spec: "cython<3"
+
+          - python-version: "3.9"
+            dnest4-version: "v0.3.3"
+            numpy-spec: "numpy"
+            scipy-spec: "scipy"
+            cython-spec: "cython"
+
+          - python-version: "3.10"
+            dnest4-version: "v0.3.3"
+            numpy-spec: "numpy"
+            scipy-spec: "scipy"
+            cython-spec: "cython"
 
     runs-on: ubuntu-latest
 
@@ -29,11 +51,11 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-        cache: 'pip'
+        cache: pip
 
     - name: Install dnest4 ${{ matrix.dnest4-version }}
       run: |
-        python -m pip install numpy scipy cython setuptools
+        python -m pip install "${{ matrix.numpy-spec }}" "${{ matrix.scipy-spec }}" "${{ matrix.cython-spec }}" setuptools
         git clone --branch ${{ matrix.dnest4-version }} --depth 1 https://github.com/eggplantbren/DNest4.git
         cd DNest4/code
         make
